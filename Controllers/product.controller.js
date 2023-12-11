@@ -1,4 +1,7 @@
+import Brand from "../Models/brand.model.js";
 import Product from "../Models/product.model.js";
+
+Product.belongsTo(Brand)
 
 export class ProductController {
 
@@ -8,7 +11,9 @@ export class ProductController {
     }
 
     getone = async (id) => {
-        const result = await Product.findByPk(id);
+        const result = await Product.findByPk(id,{
+            include: Brand
+        });
         return result;
     }
 
