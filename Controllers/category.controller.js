@@ -8,14 +8,9 @@ export class CategoryController {
     }
 
     getone = async (id) => {
-        const result = await Category.findByPk(id, {
-			include: {
-				model: Product,
-				attributes: ['id', 'name']
-			}
-		});
-		return result
-	}
+        const result = await Category.findByPk(id);
+        return result;
+    }
 
     create = async (data) => {
         console.log(data)

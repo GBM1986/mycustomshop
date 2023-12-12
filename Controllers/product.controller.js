@@ -12,15 +12,10 @@ export class ProductController {
 
     getone = async (id) => {
         const result = await Product.findByPk(id,{
-			include: [{
-				model: Brand
-			},{
-				model: Category
-			}]
-		});
-		return result
-	}
-
+            include: Brand
+        });
+        return result;
+    }
 
     create = async (data) => {
         console.log(data)
