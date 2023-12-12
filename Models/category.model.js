@@ -23,7 +23,9 @@ Category.init(
 		}
 	},
 	{
-		sequelize
+		sequelize,
+		underscored: true,
+		modelName: 'category'
 	}
 )
 

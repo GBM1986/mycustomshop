@@ -24,7 +24,9 @@ Brand.init(
         
 	},
 	{
-		sequelize
+		sequelize,
+		modelName: 'brand',
+		underscored: true
 	}
 )
 

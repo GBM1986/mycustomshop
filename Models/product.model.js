@@ -39,11 +39,15 @@ Product.init(
 		brand_id: {
 			type: DataTypes.INTEGER,
             allowNull: false,
-			key: 'id'
+			references: {
+                model: Brand,
+                key: 'id'
+            }
 		}
 	},
 	{
-		sequelize
+		sequelize,
+		underscored: true
 	}
 )
 
