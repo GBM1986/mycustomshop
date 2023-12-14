@@ -1,5 +1,5 @@
 import express from 'express'
-import {GendersController} from '../Controllers/genders.controller.js'
+import { GendersController } from '../Controllers/gender.controller.js'
 
 const controller = new GendersController();
 

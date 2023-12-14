@@ -1,6 +1,6 @@
 import Gender from "../Models/gender.model.js";
 
-export class GenderController {
+export class GendersController {
 
     listall = async () => {
         const result = await Gender.findAll();
@@ -19,7 +19,7 @@ export class GenderController {
     }
 
     update = async (data) => {
-        const result = await Gender.update(data, { where: {id: data.id} });
+        const result = await Gender.update(data, { where: { id: data.id } });
         return result;
     }
 
