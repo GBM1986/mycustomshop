@@ -1,6 +1,7 @@
 import sequelize from '../Config/db.sequelize.js';
 import { Model, DataTypes } from 'sequelize';
-// import Gender from './Gender'; // Adjust the import based on your actual file structure
+import  Gender  from '../Models/gender.model.js';
+import  Review  from '../Models/review.model.js';
 
 class User extends Model {}
 
@@ -45,6 +46,7 @@ User.init(
   }
 );
 
-// User.belongsTo(Gender, { foreignKey: 'gender_id' });
+Gender.hasMany(User, { as: 'user', foreignKey: 'gender_id' });
+User.hasMany(Review, { foreignKey: 'user_id', as: 'reviews' });
 
 export default User;

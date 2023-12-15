@@ -1,5 +1,7 @@
 import sequelize from '../Config/db.sequelize.js';
 import { Model, DataTypes } from 'sequelize';
+import User from '../Models/users.model.js'; 
+
 
 
 class Review extends Model {}
@@ -12,6 +14,11 @@ Review.init(
       autoIncrement: true,
       allowNull: false,
     },
+    num_stars: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 0
+    },
     product_id: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -21,23 +28,15 @@ Review.init(
       allowNull: false,
     },
     date: {
-        type: DataTypes.DATE,
-        allowNull: false,
-    },
-    description: {
-        type: DataTypes.TEXT,
-        allowNull: false,
-    },
-    num_stars: {
-    type: DataTypes.INTEGER,
-    allowNull: false,
-    defaultValue: 0,
-    },
+      type: DataTypes.DATE,
+      allowNull: false,
+    }
   },
   {
     sequelize,
   }
 );
+
 
 
 

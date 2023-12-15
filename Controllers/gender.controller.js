@@ -8,7 +8,9 @@ export class GendersController {
     }
 
     getone = async (id) => {
-        const result = await Gender.findByPk(id);
+        const result = await Gender.findByPk(id, {
+            include: 'user',
+        });
         return result;
     }
 

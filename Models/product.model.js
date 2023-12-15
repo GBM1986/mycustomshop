@@ -3,16 +3,7 @@ import { Model, DataTypes } from 'sequelize';
 import Brand from '../Models/brand.model.js'; // Import the Brand model
 
 // Declare the Product class extending Sequelize's Model class
-class Product extends Model {
-  // Define the model's fields and general options
-  static associate(models) {
-    // Associate Product with Brand
-    Product.belongsTo(models.Brand, {
-      foreignKey: 'brand_id',
-      as: 'brand', // Optional alias for the association
-    });
-  }
-}
+class Product extends Model {}
 
 // Define the model's fields and general options
 Product.init(
@@ -49,12 +40,13 @@ Product.init(
     brand_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      key: 'id',
     },
   },
   {
     sequelize,
   }
 );
+
+Product.belongsTo(Brand, { foreignKey: 'brand_id', as: 'brand' });
 
 export default Product;
